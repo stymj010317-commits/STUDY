@@ -1,0 +1,25 @@
+#include <Arduino.h>
+
+// put function declarations here:
+int myFunction(int, int);
+
+int led0_Pin = 2;  //1번째 LED 핀
+int button0_Pin = 3;  //1번째 스위치 핀
+
+void setup()  //초기화
+{
+  pinMode(led0_Pin, OUTPUT);  //1번째 LED 핀을 출력으로 설정
+  pinMode(button0_Pin, INPUT);  //1번째 스위치 핀을 입력으로 설정
+}
+//스위치를 누를시에 1번째 LED가 켜지도록 설정
+void loop()  //무한루프
+{
+  if(digitalRead(button0_Pin)==LOW)  //1번째 스위치가 눌렸을 때
+  {
+    digitalWrite(led0_Pin,HIGH);  //1번째 LED 켜기
+  }
+  else  
+  {
+    digitalWrite(led0_Pin,LOW);  //스위치를 누르지 않았을 때 1번째 LED 끄기
+  }
+}
